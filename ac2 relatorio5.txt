@@ -1,0 +1,53 @@
+/*
+  Programa 01
+  Liga todos os Leds
+ */
+
+// Definiçao de valores para variáveis  
+int led10 = 10;
+int led11 = 11;
+int led12 = 12;
+int led13 = 13;
+
+
+// Rotina executada 1 vez e que em geral configura entradas e saídas 
+void setup() {                
+	// configura os pinos como saídas DIGITAIS.
+	pinMode(led10, OUTPUT);
+	pinMode(led11, OUTPUT);
+	pinMode(led12, OUTPUT);
+	pinMode(led13, OUTPUT);
+	
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+	acender(0,3);
+	acender(1,4);
+	acender(2,2);
+	
+	
+}
+void acender(int led, int loop){
+	int i = 0;
+	for(i = 0 ; i < loop ; i++){
+		digitalWrite(led10, 1);
+		if(led == 0){
+			digitalWrite(led11, 1);
+			delay(1000);
+			digitalWrite(led11, 0);
+		}else if(led == 1){
+			digitalWrite(led12, 1);
+			delay(1000);
+			digitalWrite(led12, 0);
+		}else if(led == 2){
+			digitalWrite(led13, 1);
+			delay(1000);
+			digitalWrite(led13, 0);
+		}
+		
+		delay(1000);
+		digitalWrite(led10, 0);
+		
+	}
+}
